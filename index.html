@@ -1,11 +1,144 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8">
-  <title>Test Page</title>
+<meta charset="UTF-8">
+<title>My Book Library</title>
+
+<style>
+body {
+  font-family: Georgia, serif;
+  margin: 0;
+  padding: 20px;
+  background: #fafafa;
+}
+
+h1 {
+  text-align: center;
+  margin-top: 10px;
+}
+
+/* Sticky horizontal A–Z bar */
+.az {
+  position: sticky;
+  top: 0;
+  background: #f5f5f5;
+  border-bottom: 1px solid #ccc;
+  overflow-x: auto;
+  white-space: nowrap;
+  z-index: 1000;
+}
+
+.az-inner {
+  display: flex;
+  gap: 6px;
+  padding: 10px;
+}
+
+.az-inner span {
+  flex: 0 0 auto;
+  cursor: pointer;
+  padding: 8px 14px;
+  background: #e0e0e0;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.az-inner span.active {
+  background: #1a73e8;
+  color: white;
+}
+
+/* Letter sections */
+.section {
+  display: none;
+  margin-top: 20px;
+}
+
+.section.active {
+  display: block;
+}
+
+.book {
+  margin: 6px 0;
+}
+
+.book span {
+  color: #555;
+  font-style: italic;
+  font-size: 0.9em;
+}
+
+a {
+  text-decoration: none;
+  color: #2c3e50;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+</style>
 </head>
+
 <body>
-  <h1>GitHub Pages is working</h1>
-  <p>If you see this page, HTML is rendering correctly.</p>
+
+<h1>My Book Library</h1>
+
+<div class="az">
+  <div class="az-inner">
+    <span onclick="show('A')">A</span>
+    <span onclick="show('B')">B</span>
+    <span onclick="show('C')">C</span>
+    <span onclick="show('D')">D</span>
+    <span onclick="show('E')">E</span>
+    <span onclick="show('F')">F</span>
+    <span onclick="show('G')">G</span>
+    <span onclick="show('H')">H</span>
+    <span onclick="show('I')">I</span>
+    <span onclick="show('J')">J</span>
+    <span onclick="show('K')">K</span>
+    <span onclick="show('L')">L</span>
+    <span onclick="show('M')">M</span>
+    <span onclick="show('N')">N</span>
+    <span onclick="show('O')">O</span>
+    <span onclick="show('P')">P</span>
+    <span onclick="show('Q')">Q</span>
+    <span onclick="show('R')">R</span>
+    <span onclick="show('S')">S</span>
+    <span onclick="show('T')">T</span>
+    <span onclick="show('U')">U</span>
+    <span onclick="show('V')">V</span>
+    <span onclick="show('W')">W</span>
+    <span onclick="show('X')">X</span>
+    <span onclick="show('Y')">Y</span>
+    <span onclick="show('Z')">Z</span>
+  </div>
+</div>
+
+<!-- A -->
+<div id="A" class="section">
+  <div class="book">
+    <a href="https://example.com" target="_blank">Animal Farm</a>
+    <span>— Political satire</span>
+  </div>
+</div>
+
+<!-- B -->
+<div id="B" class="section">
+  <div class="book">
+    <a href="https://example.com" target="_blank">Brave New World</a>
+    <span>— Dystopian fiction</span>
+  </div>
+</div>
+
+<script>
+function show(letter) {
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.az-inner span').forEach(b => b.classList.remove('active'));
+
+  document.getElementById(letter).classList.add('active');
+  event.target.classList.add('active');
+}
+</script>
+
 </body>
 </html>
