@@ -2,10 +2,10 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>Test Page</title>
+  <title>Test</title>
 </head>
 <body>
-  <h1>Hello — GitHub Pages is working</h1>
-  <p>If you see this, HTML is rendering correctly.</p>
+  <h1>GitHub Pages is working</h1>
+  <p>If you see this page, HTML is rendering correctly.</p>
 </body>
 </html>
